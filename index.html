@@ -4,10 +4,43 @@
     <title>ejercicioAJGV</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="resources/js/js.js"></script>
+    <script src="resources/js/usuario.js"></script>
+    <link rel="stylesheet" href="resources/css/style.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#mostrar_usuarios').click(function () {
+                get_users();
+            });
+            $('#eliminar_filtros').click(function () {
+                reset_user_filters();
+            });
+        });
+    </script>
+    
 </head>
 <body>
-    <div>
-        <p>subida inicial</p>
+    <div class="body-background bg-light">
+        <div class="container row mx-auto">
+            <div class="col-12 col-lg-6 mt-5 mx-auto p-3 bg-white">
+                <div class="d-flex flex-column"> 
+                    <input type="text" id="filtro_usuarios_name" class="form-control mb-3" placeholder="filtrar usuarios por nombre" />
+                    <input type="text" id="filtro_usuarios_username" class="form-control mb-3" placeholder="filtrar usuarios por usuario" />
+                    <input type="text" id="filtro_usuarios_phone" class="form-control mb-3" placeholder="filtrar usuarios por phone" />
+                    <input type="text" id="filtro_usuarios_email" class="form-control mb-3" placeholder="filtrar usuarios por email" />
+                    
+                    <div class="d-flex">
+                        <button id="mostrar_usuarios" class="button btn btn-dark me-3">mostrar usuarios</button>
+                        <button id="eliminar_filtros" class="button btn btn-dark me-3">eliminar filtros</button>
+                    </div>
+
+                </div>
+                
+                <div id="listado_usuarios" name="listado_usuarios" class="list-group my-3"></div>
+                
+            </div>
+        </div>
     </div>
 </body>
 </html>
